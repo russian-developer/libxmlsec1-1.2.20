@@ -224,19 +224,20 @@ xmlSecError(const char* file, int line, const char* func,
             const char* errorObject, const char* errorSubject,
             int reason, const char* msg, ...) {
 
+    xmlChar error_msg[XMLSEC_ERRORS_BUFFER_SIZE];
+
+    if(msg != NULL) {
+        va_list va;
+
+        va_start(va, msg);
+        xmlSecStrVPrintf(error_msg, sizeof(error_msg), BAD_CAST msg, va);
+        error_msg[sizeof(error_msg) - 1] = '\0';
+        va_end(va);
+    } else {
+        error_msg[0] = '\0';
+    }
+    printf("ERR:%s\n", error_msg);
     if(xmlSecErrorsClbk != NULL) {
-        xmlChar error_msg[XMLSEC_ERRORS_BUFFER_SIZE];
-
-        if(msg != NULL) {
-            va_list va;
-
-            va_start(va, msg);
-            xmlSecStrVPrintf(error_msg, sizeof(error_msg), BAD_CAST msg, va);
-            error_msg[sizeof(error_msg) - 1] = '\0';
-            va_end(va);
-        } else {
-            error_msg[0] = '\0';
-        }
         xmlSecErrorsClbk(file, line, func, errorObject, errorSubject, reason, (char*)error_msg);
     }
 }
