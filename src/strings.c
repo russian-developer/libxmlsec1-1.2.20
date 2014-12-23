@@ -297,10 +297,10 @@ const xmlChar xmlSecHrefKWDes3[]                = "http://www.w3.org/2001/04/xml
  ************************************************************************/
 const xmlChar xmlSecNameGOST2001KeyValue[]              = "gost2001";
 const xmlChar xmlSecNodeGOST2001KeyValue[]              = "gostr34102001-gostr3411";
-const xmlChar xmlSecHrefGOST2001KeyValue[]              = "http://www.w3.org/2001/04/xmldsig-more#gostr34102001-gostr3411";
+const xmlChar xmlSecHrefGOST2001KeyValue[]              = "urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34102001-gostr3411";
 
 const xmlChar xmlSecNameGost2001GostR3411_94[]          = "gostr34102001-gostr3411";
-const xmlChar xmlSecHrefGost2001GostR3411_94[]          = "http://www.w3.org/2001/04/xmldsig-more#gostr34102001-gostr3411";
+const xmlChar xmlSecHrefGost2001GostR3411_94[]          = "urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34102001-gostr3411";
 
 /*************************************************************************
  *
@@ -520,7 +520,7 @@ const xmlChar xmlSecNodeRsaOAEPparams[]         = "OAEPparams";
  *
  ************************************************************************/
 const xmlChar xmlSecNameGostR3411_94[]                  = "gostr3411";
-const xmlChar xmlSecHrefGostR3411_94[]                  = "http://www.w3.org/2001/04/xmldsig-more#gostr3411";
+const xmlChar xmlSecHrefGostR3411_94[]                  = "urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr3411";
 
 /*************************************************************************
  *
@@ -663,5 +663,4 @@ const xmlChar xmlSecSoapFaultDataEncodningUnknown[]     = "DataEncodingUnknown";
  ************************************************************************/
 const xmlChar xmlSecStringEmpty[]               = "";
 const xmlChar xmlSecStringCR[]                  = "\n";
-
 
