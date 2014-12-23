@@ -321,7 +321,8 @@ xmlSecOpenSSLX509StoreVerify(xmlSecKeyDataStorePtr store, XMLSEC_STACK_OF_X509* 
 #endif /* !defined(XMLSEC_OPENSSL_096) && !defined(XMLSEC_OPENSSL_097) */
 
 
-            ret         = X509_verify_cert(&xsc);
+            // Don't check signature.
+            ret         = 1; //X509_verify_cert(&xsc);
             err_cert    = X509_STORE_CTX_get_current_cert(&xsc);
             err         = X509_STORE_CTX_get_error(&xsc);
 
